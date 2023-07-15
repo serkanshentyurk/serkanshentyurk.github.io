@@ -91,9 +91,47 @@ h3, h4, h5, h6 {
   color:#494949;
 }
 
+.tab-end{
+  display: inline-block;
+  float: right;
+}
+
+.tab-year{
+  display: inline-block;
+  margin-left: 17.2%;
+}
+
+.tab-fall{
+  display: inline-block;
+  margin-left: 14.2%;
+}
+
+.tab-summer{
+  display: inline-block;
+  margin-left: 10.3%;
+}
+
+.tab-2year{
+  display: inline-block;
+  margin-left: 12%;
+}
+
+.tab-institute {
+  display: inline-block;
+  margin-left: 10%;
+}
+.tab-info {
+  display: inline-block;
+  margin-left: 21.5%;
+}
+
 a {
   color:#39c;
   text-decoration:none;
+}
+
+.column {
+  width: 10%;
 }
 
 a:hover {
