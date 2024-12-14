@@ -17,13 +17,13 @@
 		else {
 			var timeout = 5000
 		}
-		if (example.length > i) {
+		if (example.length >= i) {
 			setTimeout(function() {
 				document.getElementById("sequence").innerHTML = example[i];
 				textSequence(++i, 1);
 			}, timeout); // 5 second (in milliseconds)
 
-		} else if (example.length == i) { // Loop
+		} else { // Loop
 			textSequence(0);
 		}
 
