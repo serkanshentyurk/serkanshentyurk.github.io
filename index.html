@@ -1,117 +1,118 @@
-<!doctype html>
-<!--This code was adapted from the Minimal theme by orderedlist-->
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<script>
+	var example = ['Hello!', 'Hi!', 'Здравей!', 'Merhaba!'];
+
+	textSequence(0);
+	function textSequence(i, n = 0) {
+		if (n == 0) {
+			var timeout = 0;
+			n = 1;
+		}
+		else {
+			var timeout = 5000
+		}
+		if (example.length > i) {
+			setTimeout(function() {
+				document.getElementById("sequence").innerHTML = example[i];
+				textSequence(++i, 1);
+			}, timeout); // 5 second (in milliseconds)
+
+		} else if (example.length == i) { // Loop
+			textSequence(0);
+		}
+
+	}
+</script>
+
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Serkan Shentyurk</title>
+	<head>
+		<title>Serkan Shentyurk</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/mouse.png">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <link rel="icon" type="image/png" href="mouse.png">
-    
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script src="https://kit.fontawesome.com/b09ee08817.js" crossorigin="anonymous"></script>
-  </head>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-  <body>
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1>Serkan Shentyurk (Şentürk)</h1>
+						<!-- <p><strong class="highlight-text">PhD Student</strong> at the 
+							<b><a href="https://lim.bio/">X LAB</a></b> at University College London. 
+							Computational Social Sciences, Physics and AI.</p> -->
+						<p><strong class="highlight-text">PhD Student</strong> at University College London. 
+							Neuroscience, Machine Learning, and Data Science.</p>
+					</header>
 
-    <div class = "navbar"> 
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/resume.html">Resume</a></li>
-        <li><a href="/misc.html">Things I Like</a></li>
-        <li><a href="https://youtu.be/dQw4w9WgXcQ">Special</a></li>
-      </ul>
-    </div>
-    
-    <div class="wrapper">
-      <header>
-        <h1 style="margin:0 0 0;">Serkan Shentyurk</h1>
-        <h3 style="margin:0 0 0; border-bottom:0;">Serkan Şentürk</h3>
-        <h3 style="margin:0 0 0; border-bottom:0;">Серкан Шентюрк</h3>
-        <p></p>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="/index.html" class="active">Introduction</a></li>
+							<li><a href="/projects.html">Projects</a></li>
+							<li><a href="/news.html">News</a></li>
+							<!-- <li><a href="/other.html">Other interests</a></li> -->
+						</ul>
+					</nav>
 
-
-        <p><img src="images/Serkan_Shentyurk.png" style="width: 90%; height: 90%;" alt="Serkan Shentyurk"></p>
-        <p class="icons">
-          <a href="mailto:serkan.shentyurk.24@ucl.ac.uk" target="_blank" data-title="E-mail"><i class="fas fa-envelope fa-2x" style="color:#222"></i></a>&nbsp;&nbsp;
-          <!--
-          <a href="https://twitter.com/s_shentyurk" target="_blank" data-title="Twitter"><i class="fab fa-twitter fa-2x" style="color:#222"></i></a>&nbsp;&nbsp;
-          -->
-          <a href="https://bsky.app/profile/serkanshentyurk.bsky.social" target="_blank" data-title="Bluesky"><i class="fa-brands fa-bluesky fa-2x" style="color:#222"></i></a>&nbsp;&nbsp;
-          <a href="https://www.linkedin.com/in/serkanshentyurk/" target="_blank" data-title="Linkedin"><i class="fab fa-linkedin fa-2x" style="color:#222"></i></a>&nbsp;&nbsp;
-          <a href="https://github.com/serkanshentyurk" target="_blank" data-title="GitHub"><i class="fab fa-github fa-2x" style="color:#222"></i></a>
-        </p>
-      </header>
-      <section>
-
-<br>
-<br>
-<h3>
-
-<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About</h3>
-
-
-<p align="justify">I am Turkish/Bulgarian <a href="https://opticalbiology.org/" target="_blank">Optical Biology</a> PhD student at <a href="https://www.ucl.ac.uk" >UCL</a>. </p>
-
-<p align="justify">I have obtained BSc in Molecular Biology and Genetics with <i>summa cum laude</i> from 
-<a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a> and a MSc in Statistics and Data Science from 
-<a href="https://kuleuven.be/en">KU Leuven</a> as a 
-<a href="https://wet.kuleuven.be/english/scienceatleuvenscholarship">Science@Leuven</a> scholar. 
-Previously, I have worked at 
-<a href="https://goncalveslab.sites.vib.be/en">Gonçalves Lab</a> and 
-<a href="https://boninlab.sites.vib.be/en/">Bonin Lab</a> at 
-<a href="https://nerf.sites.vib.be/en#/" target="_blank">NERF</a> (Neuro-Electronics Research, Flanders), 
-a research institute empowered by <a href="https://imec-int.com" target="_blank">imec</a>, 
-<a href="https://vib.be/en#/" target="_blank">VIB</a> and 
-<a href="https://www.kuleuven.be/english/kuleuven/" target="_blank">KU Leuven</a> 
-and did my thesis research under 
-<a href="https://www.bartdemoor.be">Dr. Bart De Moor</a>'s PhD candidate 
-<a href="https://orcid.org/0000-0001-9154-7543">Melanie Nijs</a>' supervision.</p>
-
-<p align="justify">Final note, Dr. Gonçalves is currently hiring at PhD/postdoc levels: see open positions at <a href="https://goncalveslab.sites.vib.be" target="_blank">goncalveslab.sites.vib.be</a>.</p>
-                 
-<br>
-
-<h3>
-
-<a id="address" class="anchor" href="#address" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Address</h3>
-
-<p>
-E-mail: <a href="mailto:serkan.shentyurk.24@ucl.ac.uk">serkan.shentyurk.24@ucl.ac.uk</a> <br>
-<br>
-Laboratory for Molecular Cell Biology <br>
-University College London <br>
-Gower St <br>
-London WC1E 6BT <br>
-<br>
+				<!-- Main -->
+					<div id="main">
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>
+												<div id="sequence"></div>
+											</h2>
+										</header>
+										<p>I am doing a PhD in Optical Biology at University College London (UCL). I was previously 
+											a part of the <a href="https://goncalveslab.sites.vib.be/en">Gonçalves Lab</a> at the Neuro-Electronics Reserach Flanders (NERF) in Belgium.
+											I am interested in how the experience and current sensory information guide the behaviour. 
+											My background is in Molecular Biology and Statistics.</p>
+										</ul>
+										<ul class="icons">
+											<!-- <li><a href="https://twitter.com/emmafraxanet" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li> -->
+											<li><a href="https://github.com/serkanshentyurk" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+											<li><a href="https://www.linkedin.com/in/serkanshentyurk/" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+											<li><a href="https://bsky.app/profile/serkanshentyurk.bsky.social" class="icon brands alt fa-bluesky"><span class="label">Bluesky</span></a></li>
+											<li><a href="assets/cv.pdf" class="button small">CV</a></li>
+										</ul>
+										<p> Email: serkan.shentyurk.24[at]ucl[dot]ac[dot]uk </p>
+									</div>
+									<span class="image"><img src="images/personal.jpeg" alt="" /></span>
+								</div>
+							</section>
 
 
-<!-- <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+					</div>
 
-  ga('create', 'UA-76418216-1', 'auto');
-  ga('send', 'pageview');
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
+							Mouse icons created by <a href="https://www.flaticon.com/free-icons/mouse" title="mouse icons">Freepik - Flaticon.</a> <br>
+							Updated on 2024-12-12 by Serkan Shentyurk.</p>
+					</footer>
 
-</script> -->
+			</div>
 
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-
-      </section>
-      <footer>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    <footer style="text-align: center; padding: 20px; background-color: #f1f1f1; position: fixed; bottom: 0; width: 100%;font-size: 12px;">
-      Updated on 2024-10-11 by Serkan Shentyurk.
-      Mouse icon created by <a href="https://www.flaticon.com/free-icons/mouse" title="mouse icons">Freepik - Flaticon</a>
-    </footer>
-  </body>
+	</body>
 </html>
