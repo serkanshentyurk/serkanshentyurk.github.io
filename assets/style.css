@@ -1,0 +1,184 @@
+/* =========================================================
+   Serkan Shentyurk — portfolio
+   Palette: deep ink, cool white, CV-blue accent, slate.
+   Type: Space Grotesk (display) / Inter (body) / IBM Plex Mono (data).
+   Signature: a logistic (psychometric) curve — the thing he fits.
+   ========================================================= */
+
+:root{
+  --ink:#16202b;
+  --ink-2:#33414f;
+  --muted:#5b6773;
+  --bg:#fcfcfe;
+  --surface:#ffffff;
+  --accent:#1a5fb4;          /* matches the CV link colour */
+  --accent-ink:#12457f;
+  --accent-soft:rgba(26,95,180,.08);
+  --line:#e7eaef;
+  --line-2:#eef1f5;
+  --shadow:0 10px 30px rgba(22,32,43,.06);
+  --font-display:"Space Grotesk",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --font-body:"Inter",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --wrap:1080px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{color:var(--accent-ink)}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+p{margin:0 0 1rem}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+/* ---------- eyebrow / mono utility ---------- */
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 .9rem;
+}
+
+/* ---------- top nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(252,252,254,.82);
+  backdrop-filter:saturate(180%) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--font-display);font-weight:600;font-size:1.05rem;color:var(--ink);letter-spacing:-.01em}
+.brand:hover{color:var(--ink)}
+.brand .dot{color:var(--accent)}
+.nav ul{list-style:none;display:flex;gap:clamp(14px,3vw,30px);margin:0;padding:0;align-items:center}
+.nav a{color:var(--ink-2);font-size:.95rem;font-weight:500}
+.nav a.active{color:var(--accent)}
+.nav a:hover{color:var(--accent)}
+.nav .cv-link{
+  font-family:var(--font-mono);font-size:.8rem;letter-spacing:.04em;
+  border:1px solid var(--line);border-radius:8px;padding:.4rem .7rem;color:var(--ink-2);
+}
+.nav .cv-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{padding-top:clamp(48px,8vw,86px);padding-bottom:clamp(48px,8vw,86px);position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(28px,5vw,60px);align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,3.7rem);margin:.2rem 0 .5rem}
+.hero .lead{font-size:clamp(1.05rem,2.2vw,1.22rem);color:var(--ink-2);max-width:42ch;margin-bottom:1.6rem}
+.hero .lead b{color:var(--ink);font-weight:600}
+.portrait{
+  justify-self:center;width:min(260px,70vw);aspect-ratio:1/1;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* signature curve, sits behind the hero on the right */
+.curve{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.9}
+.curve svg{position:absolute;right:-4%;top:50%;transform:translateY(-50%);width:min(560px,58%);height:auto}
+@media (max-width:820px){.curve{display:none}}
+
+/* ---------- action row ---------- */
+.actions{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:600;font-size:.95rem;border-radius:10px;padding:.62rem 1.05rem;
+  border:1px solid transparent;transition:transform .12s ease,background .15s ease,border-color .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-ink);color:#fff}
+.btn.ghost{border-color:var(--line);color:var(--ink-2);background:var(--surface)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.btn svg{width:16px;height:16px;fill:currentColor}
+
+/* ---------- generic section ---------- */
+.section{padding:clamp(46px,7vw,78px) 0;border-bottom:1px solid var(--line)}
+.section:last-of-type{border-bottom:0}
+.section-head{margin-bottom:2rem;max-width:60ch}
+.section-head h2{font-size:clamp(1.6rem,3.4vw,2.1rem);margin:.3rem 0 .5rem}
+.section-head p{color:var(--muted);margin:0}
+
+/* ---------- project cards ---------- */
+.projects{display:grid;gap:22px}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  padding:clamp(20px,3vw,30px);box-shadow:var(--shadow);
+  transition:transform .14s ease,border-color .14s ease,box-shadow .14s ease;
+}
+.card:hover{transform:translateY(-2px);border-color:#d7dde6;box-shadow:0 16px 40px rgba(22,32,43,.09)}
+.card-top{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:baseline;justify-content:space-between}
+.card h3{font-size:1.24rem;margin:0}
+.card .sub{color:var(--muted);font-size:.98rem;margin:.15rem 0 .9rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin:.2rem 0 1.05rem}
+.tag{
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;
+  background:var(--accent-soft);color:var(--accent-ink);
+  border-radius:6px;padding:.26rem .55rem;
+}
+.card ul{margin:.2rem 0 0;padding-left:1.15rem}
+.card li{margin:.4rem 0;color:var(--ink-2)}
+.card li b{color:var(--ink)}
+.repo-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--line-2)}
+.repo{font-family:var(--font-mono);font-size:.82rem;display:inline-flex;align-items:center;gap:.4rem}
+.repo svg{width:15px;height:15px;fill:currentColor;opacity:.85}
+
+/* ---------- about: experience / education ---------- */
+.entry{padding:1.15rem 0;border-bottom:1px solid var(--line-2)}
+.entry:last-child{border-bottom:0}
+.entry-top{display:flex;flex-wrap:wrap;gap:.3rem 1rem;align-items:baseline;justify-content:space-between}
+.entry h3{font-size:1.1rem;margin:0}
+.entry .when{font-family:var(--font-mono);font-size:.8rem;color:var(--muted);white-space:nowrap}
+.entry .role-note{color:var(--muted);font-size:.97rem;margin:.2rem 0 .5rem}
+.entry ul{margin:.3rem 0 0;padding-left:1.15rem}
+.entry li{margin:.35rem 0;color:var(--ink-2)}
+.entry li b{color:var(--ink)}
+.entry .credential{color:var(--muted);font-size:.95rem;margin:.15rem 0 0}
+.entry .credential em{color:var(--ink-2);font-style:italic}
+
+/* ---------- skills ---------- */
+.skills{display:grid;gap:.1rem}
+.skill-row{display:grid;grid-template-columns:minmax(160px,220px) 1fr;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line-2)}
+.skill-row:last-child{border-bottom:0}
+.skill-row .k{font-weight:600;color:var(--ink)}
+.skill-row .v{color:var(--ink-2)}
+.skill-row .v span{font-family:var(--font-mono);font-size:.82rem}
+@media (max-width:560px){.skill-row{grid-template-columns:1fr;gap:.15rem}}
+
+/* ---------- contact strip ---------- */
+.contact{display:flex;flex-wrap:wrap;gap:.9rem 1.4rem;align-items:center;margin-top:.4rem}
+.contact a{font-weight:500}
+.contact .sep{color:var(--line);}
+
+/* ---------- footer ---------- */
+.footer{padding:32px 0;color:var(--muted);font-size:.85rem}
+.footer .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;justify-content:space-between;align-items:center}
+.footer a{color:var(--muted)}
+.footer a:hover{color:var(--accent)}
+
+/* ---------- motion ---------- */
+.reveal{opacity:0;transform:translateY(12px);animation:rise .6s ease forwards}
+.reveal.d1{animation-delay:.06s}.reveal.d2{animation-delay:.12s}.reveal.d3{animation-delay:.18s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+@media (max-width:820px){
+  .hero-grid{grid-template-columns:1fr;text-align:left}
+  .portrait{justify-self:start;margin-top:.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto}
+  .reveal{animation:none;opacity:1;transform:none}
+  .btn:hover,.card:hover{transform:none}
+}
